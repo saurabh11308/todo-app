@@ -17,9 +17,7 @@ for index,todo in enumerate(todos):
     if flag:
         todos.pop(index)
         set_todos(todos)
-
+        st.rerun()
+        del st.session_state[index]
 
 st.text_input(label="Add a todo :",placeholder="Enter text here: ",key="add_todo",on_change=add_todo)
-
-print("Hello 123 !!!")
-print(st.session_state)
